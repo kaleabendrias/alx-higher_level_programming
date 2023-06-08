@@ -2,10 +2,12 @@
 if __name__ == "__main__":
     import sys
     length = len(sys.argv) - 1
-    if length == 0 or length > 1:
+    if length == 0 :
         print("{} arguments.".format(length))
+    elif length ==1:
+        print("{} argument:".format(length))
     else:
-        print("{} argument.".format(length))
+        print("{} arguments:".format(length))
     if length >= 1:
         length = 0
         for arg in sys.argv:
