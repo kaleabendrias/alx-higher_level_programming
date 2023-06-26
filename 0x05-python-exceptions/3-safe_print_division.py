@@ -3,7 +3,7 @@ def safe_print_division(a, b):
     sum = None
     try:
         sum = a / b
-    except:
+    except Exception:
         pass
     finally:
         print("Inside result: {}".format(sum))
