@@ -32,7 +32,6 @@ class Node:
         self.__next_node = value
 
 
-"""The SinglyLinkedList class represents the singly linked list"""
 class SinglyLinkedList:
     """lets initalize it"""
     def __init__(self):
@@ -53,7 +52,7 @@ class SinglyLinkedList:
             current.next_node = new_node
 
     def __str__(self):
-        """The __str__ method is overridden to provide a string representation of the linked list, """
+        """The __str__ method is overridden to provide a string rep"""
         nodes = []
         current = self.head
         while current is not None:
