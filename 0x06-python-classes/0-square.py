@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """defines a sqaure class"""
+
+
 class Square:
-    """inititlaxie pass"""
+    """does nothing except  pass"""
     pass
