@@ -2,4 +2,6 @@
 """defines a sqaure class"""
 class Square:
     """Empty class that is class square"""
-    pass
+    def __init__(self):
+        """initialize a new instance"""
+         pass
