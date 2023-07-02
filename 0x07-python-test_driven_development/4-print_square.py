@@ -2,7 +2,6 @@
 """ prints # only accepts integer"""
 
 
-
 def print_square(size):
     """prints square"""
     if not isinstance(size, int):

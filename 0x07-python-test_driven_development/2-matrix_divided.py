@@ -2,13 +2,13 @@
 """module for dividing matrix"""
 
 
-
 def matrix_divided(matrix, div):
     """divide all elemetns of a mtrix by div"""
+    err_msg = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(err_msg)
     if any(not isinstance(row, list) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(err_msg)
 
     row_sizes = set(len(row) for row in matrix)
     if len(row_sizes) > 1:
