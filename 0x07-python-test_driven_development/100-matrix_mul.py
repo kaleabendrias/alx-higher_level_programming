@@ -24,4 +24,3 @@ def matrix_mul(m_a, m_b):
 
     result = [[sum(a * b for a, b in zip(row_a, col_b)) for col_b in zip(*m_b)] for row_a in m_a]
     return result
-
