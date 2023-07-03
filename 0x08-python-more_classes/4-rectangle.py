@@ -67,4 +67,4 @@ class Rectangle:
 
     def __repr__(self):
         """ returns a rep of rectangle """
-        return "{}({}, {})".format((type(self).__name__), self.__width, self.__height)
+        return f"{(type(self).__name__)}({self.__width}, {self.__height})"
