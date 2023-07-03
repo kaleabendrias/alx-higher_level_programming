@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """101-nqueens finds all possible solutions the N queens puzzle
-    Attributes: N (int): base number of queens, and length of board side in piece positions
+    Attributes: N (int): base number of queens, and length of board side
 """
 from sys import argv
+
 
 def is_safe(board, row, col):
     """ Check if the current position is safe for a queen
@@ -31,6 +32,7 @@ def is_safe(board, row, col):
 
     return True
 
+
 def solve_nqueens(board, col):
     """ Base case: If all queens are placed
      then print the solution """
@@ -50,10 +52,12 @@ def solve_nqueens(board, col):
             solve_nqueens(board, col + 1)
             board[i][col] = 0
 
+
 def print_solutions(solutions):
     """ start of the func """
     for solution in solutions:
         print(solution)
+
 
 # Check if the correct number of arguments is provided
 if len(argv) != 2:
