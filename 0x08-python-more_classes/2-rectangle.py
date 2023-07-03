@@ -31,7 +31,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """ sets height """
-        if not isinstance(value,int):
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
@@ -39,7 +39,6 @@ class Rectangle:
 
     def area(self):
         """ obj method
-        
         Returns:
             area of tringle
         """
