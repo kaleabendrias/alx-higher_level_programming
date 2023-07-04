@@ -15,7 +15,7 @@ Traceback (most recent call last):
 TypeError: text must be a string
 
 >>> text_indentation("6")
-5
+6
 
 >>> text_indentation("Kaleab.   male:   alx?")
 Kaleab.
