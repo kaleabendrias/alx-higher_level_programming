@@ -21,3 +21,15 @@ dividing by zero
 Traceback (most recent call last):
   ...
 ZeroDivisionError: division by zero
+
+passing not list
+>>> matrix_divided(2, 3)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+passing not list in row
+>>> matrix_divided([[1, 2, 3], 1],3)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
