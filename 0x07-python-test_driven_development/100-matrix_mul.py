@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+"""matrix multiplier"""
+
 def matrix_mul(m_a, m_b):
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
@@ -22,5 +25,5 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    res = [[sum(a * b for a, b in zip(r, c)) for c in zip(*m_b)] for r in m_a]
-    return res
+    result = [[sum(a * b for a, b in zip(r, c)) for c in zip(*m_b)] for r in m_a]
+    return result
