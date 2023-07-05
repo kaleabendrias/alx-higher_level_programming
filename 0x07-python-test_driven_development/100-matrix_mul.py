@@ -22,5 +22,5 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    result = [[sum(a * b for a, b in zip(r, col_b)) for col_b in zip(*m_b)] for r in m_a]
+    result = [[sum(a * b for a, b in zip(r, c)) for c in zip(*m_b)] for r in m_a]
     return result
