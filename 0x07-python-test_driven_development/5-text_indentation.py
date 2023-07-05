@@ -12,7 +12,7 @@ def text_indentation(text):
     for line in lines:
         stripped = line.rstrip()
         for char in stripped:
-            result += char.strip()
+            result += char
             if char in characters:
                 result += "\n\n"
     print(result.rstrip())
