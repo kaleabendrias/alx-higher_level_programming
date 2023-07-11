@@ -14,7 +14,7 @@ class Student:
     def to_json(self):
         """returns disc discription"""
         if isinstance(attrs, list) and all(isinstance(attr, str)
-                for attr in attrs):
+            for attr in attrs):
             res = {}
             for i in attrs:
                 if i in self.__dict__:
