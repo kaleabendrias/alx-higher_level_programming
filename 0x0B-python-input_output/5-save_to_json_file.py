@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """writes an obj to a text file,on rep"""
-
-
 import json
 
 
