@@ -85,3 +85,7 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
+    def __str__(self):
+        """returns a string rep of a rectangle instance"""
+        n = f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return n
