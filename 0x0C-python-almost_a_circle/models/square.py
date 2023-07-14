@@ -17,13 +17,13 @@ class Square(Rectangle):
         """string rep o sqauare clas"""
 
         n = f"{type(self).__name__} ({self.id}) {self.x}\
-/{self.y} {self.width}"
+/{self.y} - {self.width}"
         return n
 
     @property
     def size(self):
         """getter for var size"""
-        return self.__width
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -32,5 +32,5 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__width = value
-        self.__height = value
+        self.width = value
+        self.height = value
