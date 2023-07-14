@@ -19,3 +19,18 @@ class Square(Rectangle):
         n = f"{type(self).__name__} ({self.id}) {self.x}\
 /{self.y} {self.width}"
         return n
+
+    @property
+    def size(self):
+        """getter for var size"""
+        return self.__width
+
+    @size.setter
+    def size(self, value):
+        """sets sixe to value"""
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+        self.__height = value
