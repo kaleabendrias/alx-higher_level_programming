@@ -17,5 +17,5 @@ class Square(Rectangle):
         """string rep o sqauare clas"""
 
         n = f"{type(self).__name__} ({self.id}) {self.x}\
-/{self.y} {self.__width}"
+/{self.y} {self.width}"
         return n
