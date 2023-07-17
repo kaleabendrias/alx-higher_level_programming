@@ -131,7 +131,7 @@ class Base:
         for i in (list_rectangles + list_squares):
             t.penup()
             t.setpos(0, 0)
-            turtle.screen().colormode(255)
+            turtle.Screen().colormode(255)
             Base.draw_rect(t, i)
             time.sleep(1)
         time.sleep(5)
