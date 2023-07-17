@@ -115,3 +115,38 @@ class Base:
                                 setattr(i, fields[j], int(e))
                         li.append(i)
         return li
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draws rects and squares"""
+        import turtle
+        import time
+
+        t = turtle.Turtle()
+        t.color("black")
+        turtle.bgcolor("white")
+        t.shape("square")
+        t.pensize(8)
+
+        for i in (list_rectangles + list_squares):
+            t.penup()
+            t.setpos(0, 0)
+            turtle.screen().colormode(255)
+            Base.draw_rect(t, i)
+            time.sleep(1)
+        time.sleep(5)
+
+    @staticmethod
+    def draw_rect(t, rect):
+        """cont of draw"""
+
+        t.penup()
+        t.setpos(rect.x, rect.y)
+        t.pendown()
+        t.forward(rect.width)
+        t.left(90)
+        t.forward(rect.height)
+        t.left(90)
+        t.forward(rect.width)
+        t.left(90)
+        t.forward(rect.height)
