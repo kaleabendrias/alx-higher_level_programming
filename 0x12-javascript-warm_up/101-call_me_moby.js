@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// function that executes x times a function.
+// func that executes x times a func.
 
 function callMeMoby(x, y){
     for (let i = 0; i < x; i++) {
