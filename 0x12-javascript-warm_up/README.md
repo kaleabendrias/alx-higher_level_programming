@@ -102,7 +102,32 @@ Usage:
 ./13-main.js
 ```
 
-Feel free to explore and use these scripts for your own purposes.
+## 101-call_me_moby.js
+
+This script exports a function named `callMeMoby` that executes another function `x` times. The `101-main.js` script demonstrates the use of the `callMeMoby` function to print "C is fun" three times.
+
+Usage:
+```
+./101-main.js
 ```
 
-You can add this README to your repository to provide documentation and explanations for each script you've created.
+## 102-add_me_maybe.js
+
+This script exports a function named `addMeMaybe` that increments a number and then calls another function with the incremented value. The `102-main.js` script demonstrates the use of the `addMeMaybe` function to increment a number and call a function.
+
+Usage:
+```
+./102-main.js
+```
+
+## 103-object_fct.js
+
+This script updates an object to include a function `incr` that increments an integer value. It then demonstrates the use of the `incr` function to increment the value multiple times.
+
+Usage:
+```
+./103-object_fct.js
+```
+
+Feel free to explore and use these scripts for your own purposes.
+```
