@@ -1,10 +1,9 @@
 #!/usr/bin/node
 //  function that increments and calls a function.
 
-let num = 0;
-function addMeMaybe (x, theFunction) {
-  num += x;
-  theFunction(num);
+function addMeMaybe (number, theFunction) {
+  number++; // Increment the number
+  theFunction(number); // Call the provided function with the incremented number
 }
 
 module.exports = {
