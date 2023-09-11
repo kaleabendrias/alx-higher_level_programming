@@ -5,7 +5,7 @@ const arg = process.argv;
 
 const x = parseInt(arg[2], 10);
 
-if (!isNaN(x)) {
+if (isNaN(x)) {
   for (let i = 0; i < args[2]; i++) {
     console.log('C is fun');
   }
