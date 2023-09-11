@@ -9,5 +9,5 @@ const number = parseInt(arg, 10); // Attempt to parse the argument as an integer
 if (!isNaN(number)) {
   console.log(`My number: ${number}`);
 } else {
-  console.log("Not a number");
+  console.log('Not a number');
 }
