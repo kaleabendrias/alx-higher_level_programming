@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 // Write a script that prints 3 lines:
 
 const first = "C is fun";
