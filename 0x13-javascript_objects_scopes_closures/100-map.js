@@ -7,3 +7,6 @@ const originalList = data.list;
 const newList = originalList.map(function (value, index) {
   return value * index;
 });
+
+console.log(originalList);
+console.log(newList);
