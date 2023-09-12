@@ -4,9 +4,5 @@ const data = require('./100-data.js');
 
 const originalList = data.list;
 
-const newList = originalList.map(function (value, index) {
-  return value * index;
-});
-
-console.log(originalList);
-console.log(newList);
+console.log(originalList.list);
+console.log(originalList.list.map((x, idx) => x * idx));
