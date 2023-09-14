@@ -7,8 +7,8 @@ import sys
 def main():
     # makes conn and executes query
     # Retrieve command-line arguments
-    username, password, database, state_name = sys.argv[1],
-    sys.argv[2], sys.argv[3], sys.argv[4]
+    username, password, database, state_name = sys.argv[1],\
+        sys.argv[2], sys.argv[3], sys.argv[4]
     # Connect to the MySQL server
     db = MySQLdb.connect(
             host="localhost",
@@ -21,15 +21,16 @@ def main():
     cursor = db.cursor()
     # Execute the SQL query to select states with a matching name
     query = """
-        SELECT cities.name FROM cities JOIN states ON\
-    cities.state_id = states.id AND states.name = %s ORDER BY cities.id ASC
+        SELECT GROUP_CONCAT(cities.name ORDER BY cities.id ASC SEPARATOR ', ')
+        FROM cities
+        JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
         """
     cursor.execute(query, (state_name,))
     # Fetch all the results
-    results = cursor.fetchall()
-    # Print the results
-    for row in results:
-        print(row)
+    result = cursor.fetchone()
+    if result and result[0]:
+        print(result[0])
     # Close the cursor and database connection
     cursor.close()
     db.close()
