@@ -26,4 +26,3 @@ if __name__ == "__main__":
         state = session.query(State).filter(State.id == city.state_id).first()
         print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.close()
-    
