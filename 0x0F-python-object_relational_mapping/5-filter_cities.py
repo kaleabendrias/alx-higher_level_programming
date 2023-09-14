@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-'''script that lists all cities from the database hbtn_0e_4_usa'''
+'''write a script that takes in arguments and displays'''
 import MySQLdb
 import sys
 
 
 def main():
     # makes conn and executes query
-    if len(sys.argv) != 4:
-        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
-        sys.exit(1)
-    username, password, database = sys.argv[1],
-    sys.argv[2], sys.argv[3]
+    # Retrieve command-line arguments
+    username, password, database, state_name = sys.argv[1],
+    sys.argv[2], sys.argv[3], sys.argv[4]
     # Connect to the MySQL server
     db = MySQLdb.connect(
             host="localhost",
@@ -23,12 +21,10 @@ def main():
     cursor = db.cursor()
     # Execute the SQL query to select states with a matching name
     query = """
-        SELECT cities.id, cities.name, states.name
-        FROM cities
-        JOIN states ON cities.state_id = states.id
-        ORDER BY cities.id ASC
+        SELECT cities.name FROM cities JOIN states ON\
+    cities.state_id = states.id AND states.name = %s ORDER BY cities.id ASC
         """
-    cursor.execute(query)
+    cursor.execute(query, (state_name,))
     # Fetch all the results
     results = cursor.fetchall()
     # Print the results
