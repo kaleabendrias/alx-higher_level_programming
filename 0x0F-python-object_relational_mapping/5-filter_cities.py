@@ -26,9 +26,10 @@ def main():
         """
     cursor.execute(query, (state_name,))
     # Fetch all the results
-    result = cursor.fetchone()
-    if result and result[0]:
-        print(result[0])
+    result = cursor.fetchall()
+    ll = [x[0] for x in result]
+    total = ", ".join(ll)
+    print(total)
     # Close the cursor and database connection
     cursor.close()
     db.close()
