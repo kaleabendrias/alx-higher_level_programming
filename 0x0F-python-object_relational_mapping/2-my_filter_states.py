@@ -19,8 +19,8 @@ def main():
     # Create a cursor object
     cursor = db.cursor()
     # Execute the SQL query to select states with a matching name
-    cursor.execute("SELECT * FROM states WHERE name = '{}'\
-                   ORDER BY id ASC".format(state_name))
+    cursor.execute("SELECT * FROM states WHERE BINARY name = '{:s}'\
+        ORDER BY id ASC".format(argv[4]))
     # Fetch all the results
     results = cursor.fetchall()
     # Print the results
