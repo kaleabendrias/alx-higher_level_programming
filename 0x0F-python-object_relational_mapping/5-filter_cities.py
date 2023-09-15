@@ -21,10 +21,8 @@ def main():
     cursor = db.cursor()
     # Execute the SQL query to select states with a matching name
     query = """
-        SELECT GROUP_CONCAT(cities.name ORDER BY cities.id ASC SEPARATOR ', ')
-        FROM cities
-        JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
+        SELECT cities.name FROM cities JOIN states ON\
+        cities.state_id = states.id AND states.name = %s ORDER BY cities.id ASC
         """
     cursor.execute(query, (state_name,))
     # Fetch all the results
