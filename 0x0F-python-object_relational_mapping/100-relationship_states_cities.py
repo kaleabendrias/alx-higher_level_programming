@@ -21,7 +21,7 @@ if __name__ == "__main__":
           'password': sys.argv[2],
           'database': sys.argv[3]}
 
-    url = URL(**db)
+    url = URL.create(**db)
     engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
