@@ -6,4 +6,7 @@ import sys
 url = sys.argv[1]
 with urllib.request.urlopen(url) as res:
     body = res.read()
-    print(body.decode('utf-8'))
+    if body:
+        print(body.decode('utf-8'))
+    else:
+        print(f"Error code: {res.status}")
