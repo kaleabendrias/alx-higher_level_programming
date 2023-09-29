@@ -9,4 +9,4 @@ user_name = sys.argv[1]
 passwd = sys.argv[2]
 credentials = (user_name, passwd)
 res = requests.get(url, auth=credentials)
-print(res.status_code)
+print(res.json()['id'])
