@@ -5,8 +5,8 @@ import sys
 
 url = sys.argv[1]
 email = sys.argv[2]
-data = urllib.parse.urlencode(email)
-data = data.encode('ascii')
+data = urllib.parse.urlencode({'email': email})
+data = data.encode('utf-8')
 req = urllib.request.Request(url, data)
 with urllib.request.urlopen(req) as res:
     body = res.read()
