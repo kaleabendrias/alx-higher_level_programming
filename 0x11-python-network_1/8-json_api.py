@@ -4,7 +4,10 @@ import requests
 import sys
 
 url = "http://0.0.0.0:5000/search_user"
-letter = sys.argv[1]
+if len(sys.argv) == 2:
+    letter = sys.argv[1]
+else:
+    letter = ''
 res = requests.post(url, data={'q': letter})
 try:
     json_res = res.json()
