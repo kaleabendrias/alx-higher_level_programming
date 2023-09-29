@@ -10,4 +10,4 @@ data = data.encode('utf-8')
 req = urllib.request.Request(url, data)
 with urllib.request.urlopen(req) as res:
     body = res.read()
-    print(body)
+    print(body.decode('utf-8'))
