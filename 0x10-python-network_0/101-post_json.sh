@@ -1,3 +1,3 @@
 #!/bin/bash
-# Usage: ./101-post_json.sh <URL>
-curl -sX POST -d "$(cat "$2")" "$1"
+# Usage: ./101-post_json.sh <URL> <filename>
+curl -s -H "Content-Type: application/json" -X POST --data "@$2" "$1"
