@@ -5,5 +5,5 @@ import sys
 
 url = sys.argv[1]
 with urllib.request.urlopen(url) as res:
-    body = res.body
-    print(body)
+    body = res.read()
+    print(body.encode('utf-8'))
