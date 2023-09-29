@@ -6,4 +6,4 @@ import sys
 url = sys.argv[1]
 with urllib.request.urlopen(url) as res:
     body = res.read()
-    print(body.encode('utf-8'))
+    print(body.decode('utf-8'))
