@@ -3,7 +3,7 @@
 import requests
 
 url = "https://alx-intranet.hbtn.io/status"
-req = requests.get(url)
+res = requests.get(url)
 print("Body response:$")
-print(f"\t- type: {type(req)}")
-print(f"\t- content: {req.content.decode('utf-8')}")
+print(f"\t- type: {type(res.text)}")
+print(f"\t- content: {res.content.decode('utf-8')}")
