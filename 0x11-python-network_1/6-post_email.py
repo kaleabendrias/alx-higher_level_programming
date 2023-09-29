@@ -5,5 +5,5 @@ import sys
 
 url = sys.argv[1]
 email = sys.argv[2]
-res = requests.get(url, data=email)
+res = requests.get(url, auth=email)
 print(res)
