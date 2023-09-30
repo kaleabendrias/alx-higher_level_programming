@@ -6,10 +6,14 @@ def find_peak(list_of_integers):
     if not list_of_integers:
         return None
 
-    for idx, num in enumerate(list_of_integers):
-        left = list_of_integers[idx - 1] if idx > 0 else float('-inf')
-        right = list_of_integers[idx + 1] if idx < len(list_of_integers) - 1 else float('-inf')
+    left, right = 0, len(list_of_integers) - 1
 
-        if num >= left and num >= right:
-            return num
+    while left < right:
+        mid = (left + right) // 2
 
+        if list_of_integers[mid] > list_of_integers[mid + 1]:
+            right = mid
+        else:
+            left = mid + 1
+
+    return list_of_integers[left]
