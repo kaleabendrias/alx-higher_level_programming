@@ -6,4 +6,4 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     res = requests.get(url).headers
-    print(res['X-Request-Id'])
+    print(res.get("X-Request-Id"))
