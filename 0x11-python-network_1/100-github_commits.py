@@ -3,13 +3,14 @@
 import requests
 import sys
 
-repo = sys.argv[1]
-owner = sys.argv[2]
-url = f"https://api.github.com/repos/{owner}/{repo}/commits"
+if __name__ == "__main__":
+    repo = sys.argv[1]
+    owner = sys.argv[2]
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits"
 
-res = requests.get(url).json()
-try:
-    for i in range(10):
-        print(f"{res[i]['sha']}: {res[i]['commit']['author']['name']}")
-except IndexError:
-    pass
+    res = requests.get(url).json()
+    try:
+        for i in range(10):
+            print(f"{res[i]['sha']}: {res[i]['commit']['author']['name']}")
+    except IndexError:
+        pass
