@@ -13,7 +13,7 @@ if __name__ == "__main__":
     try:
         json_res = res.json()
         if json_res:
-            print(f"[{json_res['id']} {json_res['name']}]")
+            print(f"[{json_res['id']}] {json_res['name']}")
         else:
             print("No result")
     except ValueError:
