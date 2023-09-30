@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Write a Python script that takes in a URL and an email, sends a POST
+"""Write a Python script that takes in a URL and an email, sends a POST"""
 import urllib.request
 import sys
 

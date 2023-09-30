@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# a Python script that fetches a url
+"""Python script that fetches a url"""
 import requests
 
 url = "https://alx-intranet.hbtn.io/status"

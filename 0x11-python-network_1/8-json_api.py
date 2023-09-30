@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# a Python script that takes in a letter and sends a POST
+"""Python script that takes in a letter and sends a POST"""
 import requests
 import sys
 

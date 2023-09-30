@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Python script that takes 2 arguments
+"""Python script that takes 2 arguments"""
 import requests
 import sys
 
