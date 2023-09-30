@@ -8,6 +8,9 @@ def find_peak(list_of_integers):
 
     left, right = 0, len(list_of_integers) - 1
 
+    if list_of_integers[left] >= list_of_integers[left + 1]:
+        return list_of_integers[left]
+
     while left < right:
         mid = (left + right) // 2
 
