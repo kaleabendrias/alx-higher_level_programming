@@ -9,5 +9,6 @@ if __name__ == "__main__":
     user_name = sys.argv[1]
     passwd = sys.argv[2]
     credentials = (user_name, passwd)
+    head = {"Authorization": f"token {passwd}"}
     res = requests.get(url, auth=credentials)
-    print(res.json()['id'])
+    print(res.json().get("id"))
