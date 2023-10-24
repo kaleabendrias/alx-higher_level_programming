@@ -5,9 +5,9 @@ const id = process.argv[2];
 const url = 'https://swapi-api.hbtn.io/api/films/';
 
 request.get(url + id, (err, res, body) => {
-  if (!err && res.statusCode == 200) {
+  if (!err && res.statusCode === 200) {
     const data = JSON.parse(body);
-    chara = data.characters;
+    const chara = data.characters;
     for (const per of chara) {
       request.get(per, (err, res, body) => {
         if (err) {
