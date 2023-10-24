@@ -7,15 +7,14 @@ const characterId = '18';
 request.get(apiUrl, (error, response, body) => {
   if (!error && response.statusCode === 200) {
     const data = JSON.parse(body);
-    let count = 0;
-    let i = 0;
-    while (i < data.results.length) {
-      if (data.results[i].characters
-        .includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
-        count++;
+    const count = data.results.reduce((accumulator, film) => {
+      if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
+          return accumulator + 1;
+      } else {
+          return accumulator;
       }
-      i++;
-    }
+    }, 0);
+  
     console.log(count);
   } else {
     console.error(error);
