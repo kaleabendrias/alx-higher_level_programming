@@ -1,22 +1,27 @@
 #!/usr/bin/node
 const request = require('request');
-const id = process.argv[2];
+const util = require('util');
+const promisifiedRequestGet = util.promisify(request.get);
 
+const id = process.argv[2];
 const url = 'https://swapi-api.hbtn.io/api/films/';
 
-request.get(url + id, (err, res, body) => {
-  if (!err && res.statusCode === 200) {
-    const data = JSON.parse(body);
-    const chara = data.characters;
-    for (const per of chara) {
-      request.get(per, (err, res, body) => {
-        if (err) {
-          console.log(err);
+async function getCharacters() {
+    try {
+        const { body } = await promisifiedRequestGet(url + id);
+        const data = JSON.parse(body);
+        const characters = data.characters;
+        for (const characterUrl of characters) {
+            try {
+                const characterData = await promisifiedRequestGet(characterUrl);
+                console.log(JSON.parse(characterData.body).name);
+            } catch (err) {
+                console.error(err);
+            }
         }
-        console.log(JSON.parse(body).name);
-      });
+    } catch (err) {
+        console.error(err);
     }
-  } else {
-    console.log(err);
-  }
-});
+}
+
+getCharacters();
