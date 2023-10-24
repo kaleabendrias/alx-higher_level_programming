@@ -9,12 +9,12 @@ request.get(apiUrl, (error, response, body) => {
     const data = JSON.parse(body);
     const count = data.results.reduce((accumulator, film) => {
       if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
-          return accumulator + 1;
+        return accumulator + 1;
       } else {
-          return accumulator;
+        return accumulator;
       }
     }, 0);
-  
+
     console.log(count);
   } else {
     console.error(error);
