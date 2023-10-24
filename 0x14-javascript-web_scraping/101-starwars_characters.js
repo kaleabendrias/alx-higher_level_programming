@@ -1,25 +1,16 @@
 #!/usr/bin/node
+
+const args = process.argv;
 const request = require('request');
-const movieId = process.argv[2];
 
-const url = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
-
-request.get(url, (error, response, body) => {
-  if (!error && response.statusCode === 200) {
-    const film = JSON.parse(body);
-    const characters = film.characters;
-
-    characters.forEach(characterUrl => {
-      request.get(characterUrl, (error, response, body) => {
-        if (!error && response.statusCode === 200) {
-          const character = JSON.parse(body);
-          console.log(character.name);
-        } else {
-          console.error('Error occurred while fetching character data.', error);
-        }
-      });
-    });
+request('https://swapi-api.alx-tools.com/api/films/' + args[2], (err, code, body) => {
+  if (err) {
+    console.error(err);
   } else {
-    console.error('Error occurred while fetching movie data.', error);
+    for (const character of JSON.parse(body).characters) {
+      request(character, (err, code, body) => {
+        if (err) { console.error(err); } else { console.log(JSON.parse(body).name); }
+      });
+    }
   }
 });
